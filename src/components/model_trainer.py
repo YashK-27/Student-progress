@@ -16,7 +16,7 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.tree import DecisionTreeRegressor
 from xgboost import XGBRegressor
 
-from src.exception import CustomException
+from ..exception import CustomException
 from src.logger import logging
 
 from src.utils import save_object, evaluate_model
@@ -74,12 +74,7 @@ class ModelTrainer:
                     'n_estimators': [8,16,32,64,128,256]
                 },
 
-                "Linear Regression":{
-                    'learning_rate':[.1,.01,.05,.001],
-                    'n_estimators': [8,16,32,64,128,256],
-                    'alpha':[.1]
-
-                },
+                "Linear Regression":{},
                 "XGBRegressor":{
                     'learning_rate':[.1,.01,.05,.001],
                     'n_estimators': [8,16,32,64,128,256]

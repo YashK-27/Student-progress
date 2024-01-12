@@ -29,7 +29,7 @@ def evaluate_model(X_train,Y_train, X_test, Y_test,models, param):
         for i in range(len(list(models))):
             
             model = list(models.values())[i]
-            para = param[list(models.key())[i]]
+            para = param[list(models.keys())[i]]
 
             gs = GridSearchCV(model, para, cv = 3)
             gs.fit(X_train, Y_train)
@@ -53,5 +53,4 @@ def evaluate_model(X_train,Y_train, X_test, Y_test,models, param):
     
     except Exception as e:
         raise CustomException(e,sys)
-
 
